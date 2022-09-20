@@ -1,0 +1,22 @@
+START
+
+userInput <- Scanner
+
+Print "How much do you weigh in pounds followed by ounces?"
+
+poundsWeight <- userInput #1
+ouncesWeight <- userInput #2
+
+Print "How tall are you in feet followed by inches?"
+
+feetHeight <- userInput #3
+inchesHeight <- userInput #4
+
+totalWeightp <- (ouncesWeight/16) + poundsWeight
+totalHeighti <- (feetHeight * 12) + inchesHeight
+
+bodyMassI <- ( totalWeightp / (totalHeighti * totalHeighti) ) * 703
+
+print "Your BMI is " + bodyMassI + "."
+
+END

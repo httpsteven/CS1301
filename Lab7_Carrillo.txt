@@ -1,0 +1,27 @@
+Method TopThree(currentStudent,currentGrade)
+--------------------------------------------
+numberOne <- max(currentGrade)
+originalOne <- currentGrade[numberOne]
+currentGrade[numberOne] <- 0
+numberTwo <- max(currentGrade)
+originalTwo <- currentGrade[numberTwo]
+currentGrade[numberTwo] <- 0
+
+numberThree <- max(currentGrade)
+SOP <- Top 3 Students
+SOP <- > currentStudent[numberOne]
+SOP <- > currentStudent[numberTwo]
+SOP <- > currentStudent[numberThree]
+
+currentGrade[numberOne] <- originalOne
+currentGrade[numberOne] <- originalTwo
+
+
+Method max(grades)
+max <- 0;
+position <- 0
+	for( i <- 0 - i < length of grades - i+1 )
+		if (max < grades[i]
+			max = grades[i]
+			position = i
+	return <- position

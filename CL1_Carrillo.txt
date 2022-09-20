@@ -1,0 +1,87 @@
+START
+
+fruit-database.txt <-> Initiate File Scanner
+userInput <-> Initiate Scanner
+
+choice <- " "
+fruitChoice <- " "
+currentFruit <- " "
+currentPrice <- " "
+currentWeight <- " "
+totalWeight <- 0
+bagsPrice <- 0.15
+bagsNeeded <- 0
+bagCapacity <- 5
+bagsProvided <- 0
+bagsTotal <- 0
+count <- 1
+giftCard <- 0
+change <- 0
+checkOut <- 0
+eXit <- 0
+
+SOP <- "Welcome to Salamah Market"
+
+do
+  SOP (Please select an option:(Numerically)
+       1. Add Item
+       2. View Cart
+       3. Clear Cart
+       4. Check Out
+       5. Exit
+       )
+
+    choice <- userInput
+
+if choice equals 1(
+  SOP "Here are all the available foods:"
+  while(file has next line){
+  SOP (file next line)
+  }
+  SOP "Enter the name of the foods you'd like to add to cart:"
+  fruitChoice <- userInput
+  if (fruitChoice equals currentFruit){
+  currentPrice = next number
+  }
+  SOP "How many pounds of " + currentFruit + " would you like?"
+  currentWeight = userInput
+  totalWeight = totalWeight + currentWeight
+  total = total + (currentWeight * currentPrice)
+  )
+if choice equals 2(
+  SOP "Your current total weight is " + totalWeight + " and your current total price is $" + total
+  )
+if choice equals 3(
+  totalWeight = 0
+  total = 0
+  SOP "Cart Cleared"
+)
+if choice equals 4(
+  SOP "Time to checkout. How many bags did you bring?"
+  bagsProvided = userInput
+  bagsNeeded = currentWeight/bagCapacity
+  bagsTotal = (bagsNeeded - bagsProvided) * bagsPrice
+  SOP "Your total weight is " + currentWeight + "pounds so you need to purchase" + bagsNeeded + 
+       "additional bags will cost " + bagsTotal "."
+  total = total + bagsTotal
+  SOP "Your total is $" + total
+
+  SOP "Enter your gift card amount"
+  giftCard = userInput
+
+  if (giftCard >= total){
+    change = total - giftCard
+    SOP "Thank you for shopping at Salamah Market, come back soon!"
+    SOP "Remaining gift card balance:" + change
+    checkOut = 1 
+  }
+)
+  if (choice equals 5){
+  eXit = 1
+  SOP "Thank you for accompanying us here at Salamah Market! Have a great day!"
+  }
+)while(checkOut = 1 or eXit = 1)
+    close userInput
+    close file scanner
+
+END

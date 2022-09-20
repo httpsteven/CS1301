@@ -1,0 +1,88 @@
+<| METHOD addTxt [String a] |>
+
+file <- a
+if file contains .txt
+  return file
+else
+  file <- file + ".txt"
+  return file
+
+<| METHOD isPalindrome [String phrase] |>
+
+userPhrase <- phrase but replace all spaces with blanks
+userReverse <- ""
+
+for | i <- userPhrase's length - 1 | i >= 0 | i - 1
+userReverse <- userPhrase character # i
+
+  if (userPhrase equals userReverse)
+     SOP <- phrase is a Palindrome
+  else
+     SOP <- phrase is not a Palindrome
+
+<| METHOD lineCounter [String a] |>
+
+counter = 1
+file = addTxt(a)
+fileReader <- Scanner(file)
+while fileReader has next line
+  fileReader to next line
+  counter <- counter + 1
+
+SOP <- The amount of lines in + file + is + counter + .
+
+<| METHOD numOfOccurences [String a, character b] |>
+
+counter <- 0
+file <- addTxt(a)
+fileReader <- Scanner(file)
+while fileReader has next line
+  newLine <- fileReader next line
+
+  for | i <- 0 | i < newLine length | i + 1
+    if newLine's character i = lowercase or uppercase b
+    counter <- counter + 1
+
+SOP <- The amount of times character + b + is in file + file + is + counter + .
+
+<| METHOD areaOfCylinder [String diameter, String height] |>
+
+radius <- diameter / 2
+area <- (2 x pi x radius x height) + (2 x pi x radius^2 )
+SOP <- The area of that cylinder is (area rounded to .00)
+
+START
+
+userInput <- Scanner
+
+SOP <- isPalindrome
+SOP <- Enter a phrase
+phrase <- userInput
+isPalindrome(phrase)
+
+SOP <- lineCounter
+SOP <- Enter the name of the file
+file <- userInput
+lineCounter(file)
+
+SOP <- numOfOccurences
+SOP <- Enter the name of a file:
+file <- userInput
+SOP <- Enter the letter you want:
+letter = userInput
+numOfOccurences(file,letter)
+
+SOP areaOfCylinder
+isNegative <- 1
+do
+  SOP <- Enter the diameter of a areaOfCylinder
+  diameter = userInput
+  SOP <- Enter the height of the cylinder
+  height <- userInput
+  if diameter is more than 0 and height is more than 0
+    areaOfCylinder(diameter, height)
+      isNegative <- 1
+    else isNegative <- 1
+while isNegative = 1
+
+END

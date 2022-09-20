@@ -1,0 +1,7 @@
+Apples 1.32
+Strawberries 2.23
+Oranges 1.50
+Peaches 1.89
+Cantaloupe 2.34
+Bananas 0.58
+Mangos 1.50

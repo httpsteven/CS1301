@@ -1,0 +1,83 @@
+START
+
+Initiate Scanner <- userInput
+
+SOP <- "---------SIGN UP WITH SPOTIFY---------"
+SOP <- "eMail >"
+email <- "userInput1"
+password <- ""
+validSpecial <- false
+validUpper <- false
+validLower <- false
+counterUpper <- 0
+counterLower <- 0
+counterSpecial <- 0
+counterChar <- 0
+counterDigit <- 0
+counterEntry <- 0
+studentPrice <- 4.99
+regularPrice <- 9.99
+tax <- 1.0725
+total <- 0
+
+do
+
+SOP <- "Password >"
+password <- userInput2
+
+for the time it is true
+
+if password is greater than 8 or less than 20 characters
+counterChar + 1
+if password has a Digit
+counterDigit + 1
+if password is UpperCase <- validUpper = true
+counterUpper + 1
+if password is LowerCase <- validLower = true
+counterLower + 1
+if password has a Special Character (!, #, @, *) <- validSpecial = true
+counterSpecial + 1
+
+if counterUpper <= 0 or counterLower <= 0 or counterSpecial <= 0
+SOP <- "Please enter a password that meets the following requirements:"
+SOP <- "-Contains at least 8 characters and at most 20 characters"
+SOP <- "-Contains at least one upper-case letter"
+SOP <- "-Contains at least one lower-case letter letter"
+SOP <- "-Contains at least one digit"
+SOP <- "Contains at least one special character [!, #, $, or *]"
+
+while counterSpecial <= 0 or counterUpper <= 0 or counterLower <= 0 or counterChar <= 0 or counterDigit <= 0
+
+SOP <- "--THANK YOU FOR MAKING AN ACCOUNT WITH SPOTIFY--"
+SOP "-----------------PLEASE SIGN IN-----------------"
+
+eMailEntry
+passwordEntry
+
+Entry = 1
+
+do
+
+SOP <- "eMail >"
+eMailEntry <- userInput3
+passwordEntry <- userInput4
+
+if eMailEntry = email and passwordEntry = password
+Entry = 2
+SOP <- "--------------------WELCOME--------------------"
+else
+SOP <-"Either your eMail or your Password are incorrect. Please Try Again."
+Entry = 1
+
+while Entry = 1
+
+if email contains "@miners.utep.edu"
+  total <- studentPrice x tax
+SOP <- "You qualify for the discount plan with Spotify."
+SOP <- "Your total is " + total
+else
+  total <- regularPrice x tax
+SOP <- "We are sorry that you do not quality for our discount plan."
+SOP <- "Your total is " + total
+
+END

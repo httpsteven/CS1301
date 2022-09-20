@@ -1,0 +1,49 @@
+fillMessage Method(fileName,m[])
+-----------------------------
+token <- ""
+currLine <- ""
+fileReader <- fileName Scanner
+i <- 0
+counter <- 1
+fileReader <- nextLine
+while fileReader has a next Line
+	if counter <= 2
+		currLine <- fileReader-nextLine
+		token = currLine split by ", "
+		m[i] <- (token(3),token(4),token(5),token(6),token(7))
+	else
+		currLine <- fileReader-nextLine
+		token <- currLine split by ", "
+		m[i] <- empty Message
+		m[i] <- setText(token(3))
+		m[i] <- setMonth(token(4))
+		m[i] <- setDay(token(5))
+		m[i] <- setTime(token(6))
+		m[i] <- setTimeofDay(token(7))
+	i <- i+1
+	counter <- counter + 1
+-----------------------------
+fillContact Method(fileName,contact[],currMessage[])
+-----------------------------
+token <- ""
+currLine <- ""
+fileReader <- fileName Scanner
+i <- 0
+counter <- 1
+fileReader <- nextLine
+while fileReader has a next Line
+	if counter <= 2
+		currLine <- fileReader-nextLine
+		token = currLine split by ", "
+		contact[i] <- (token(0),token(1),token(2),currMessage[])
+	else
+		currLine <- fileReader-nextLine
+		token <- currLine split by ", "
+		contact[i] <- empty Contact
+		contact[i] <- setFirstName(token(0))
+		contact[i] <- setLastName(token(1))
+		contact[i] <- setPhoneNumber(token(3))
+		contact[i] <- setCurrMessage(currMessage[i])
+	i <- i+1
+	counter <- counter + 1
+-----------------------------

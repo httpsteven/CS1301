@@ -1,0 +1,66 @@
+-----------------------oddSumRange-----------------------
+for loop:
+
+oddSumRange <- x and y
+if x is even
+x <- x + 1
+
+sum = 0
+for i <- x | i is less than y | i+1
+sum <- sum + i
+i <- i + 1
+
+return sum
+
+
+recursion:
+
+oddSumRange <- x and y
+if x = y
+return <- 0
+else if x is less than y
+return <- x + oddSumRange| x + 2 , y |
+else 
+return <- 0;
+
+------------------------reverse------------------------
+for loop:
+
+reverse <- phrase
+reverseWord <- " "
+for i <- length of phrase - 1 | i is less than or equal to 0 | i - 1
+reverseWord <- reverseWord + phrase character position i
+return <- reverseWord
+
+
+recursion:
+
+reverse <- reversePhrase and i 
+if reversePhrase equals " " or if it is one character
+return <- reversePhrase
+else if <- i is greater than or equal to 0
+return reversePhrase character position i + reverse|reversePhrase, i - 1 |
+else
+return <- " "
+
+START
+userInput <- Scanner Initiate
+
+SOP <- "--oddSumRange--"
+initialC <- 0
+SOP <- "Enter a starting position: "
+initial <- userInput
+SOP <- "Enter an ending position: "
+final <- userInput
+if initial is even
+initialC <- initial + 1
+else 
+initialC <- initial
+SOP <- The odd sum between finalR and initial is oddSumRange|initialC, final|
+
+SOP <- "--reverse--"
+SOP <- "Enter a phrase: "
+userInput <- restate Scanner
+reverse <- userInput
+counter <- reverse length - 1
+SOP <- reverse|reverse, counter|

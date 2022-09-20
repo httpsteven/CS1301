@@ -1,0 +1,18 @@
+START
+SOP <- What size are the three sides of the triangle?
+Open scanner
+
+a <- scannerInput1
+b <- scannerInput2
+c <- scannerInput3
+
+If <- a equals to b and b equals to c
+SOP <- Regular Triangle
+
+else if <- a equals to b or b equal to c or a equals to c
+SOP <- Symmetric Triangle
+
+else if <- a is not equal to b or b is not equal to c or a is not equal to c
+SOP <- Irregular Triangle
+
+END
